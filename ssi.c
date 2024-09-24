@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>   // For getcwd(), getlogin(), and gethostname()
-#include <limits.h>   // For PATH_MAX, which defines max path length
+#include <unistd.h>
+#include <limits.h>   // For PATH_MAX
+#include <sys/wait.h>
 
 #define MAX_INPUT 1024
 #define MAX_ARGS 64
@@ -27,6 +28,26 @@ void get_prompt(char *prompt, size_t size) {
 
     // Format the prompt string: username@hostname:cwd>
     snprintf(prompt, size, "%s@%s:%s> ", username, hostname, cwd);
+}
+
+// Built-in function to change directory
+void change_directory(char *path) {
+    char *home_dir;
+
+    if (path == NULL || strcmp(path, "~") == 0) {
+        // If no path is provided or path is "~", go to the home directory
+        home_dir = getenv("HOME");  // Get the home directory from $HOME
+        if (home_dir == NULL) {
+            perror("getenv");
+            return;
+        }
+        path = home_dir;
+    }
+
+    // Use chdir to change the directory
+    if (chdir(path) != 0) {
+        perror("chdir");  // Print error if chdir fails
+    }
 }
 
 // Function to read user input
@@ -82,16 +103,26 @@ int main() {
         // Read input
         read_input(input);
 
-        // Exit shell if the user types "exit"
-        if (strcmp(input, "exit") == 0) {
-            break;
-        }
-
         // Parse the input into command and arguments
         parse_input(input, args);
 
-        // Execute the command
-        execute_command(args);
+        // Handle the "cd" command separately
+        if (strcmp(args[0], "cd") == 0) {
+            if (args[1] != NULL && args[2] != NULL) {
+                // Ignore additional arguments beyond the first one
+                printf("cd: too many arguments\n");
+            } else {
+                // Change directory
+                change_directory(args[1]);
+            }
+        }
+        // Exit the shell if the user types "exit"
+        else if (strcmp(args[0], "exit") == 0) {
+            break;
+        } else {
+            // Execute the command if it's not "cd"
+            execute_command(args);
+        }
     }
 
     return 0;
