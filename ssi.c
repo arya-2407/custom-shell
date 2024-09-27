@@ -110,7 +110,7 @@ void change_directory(char *path) {
         path = home_dir;
     }
     if (chdir(path) != 0) {
-        perror("chdir");
+        printf("%s : No such file or directory\n", path);
     }
 }
 
@@ -146,7 +146,7 @@ void execute_command(char **args, int background) {
         }
 
         if (execvp(args[0], args) == -1) {
-            perror("execvp");
+            printf("No such command\n");
         }
         exit(EXIT_FAILURE);
     } else if (pid < 0) {
