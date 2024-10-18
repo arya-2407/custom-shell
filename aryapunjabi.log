@@ -1,0 +1,413 @@
+2024/10/16 16:47:33 [testMake] Testing Makefile exists and can compile ssi, 0.25
+2024/10/16 16:47:33 [COMMAND]: /usr/bin/make -C submissions/aryapunjabi/p1 clean
+2024/10/16 16:47:33 make: Entering directory '/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1'
+rm -f ssi
+make: Leaving directory '/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1'
+2024/10/16 16:47:33 [COMMAND]: /usr/bin/make -C submissions/aryapunjabi/p1
+2024/10/16 16:47:33 make: Entering directory '/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1'
+gcc ssi.c -o ssi
+make: Leaving directory '/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1'
+2024/10/16 16:47:33 ==== Test name: testMake, Mark received: 0.25 ====
+
+2024/10/16 16:47:34 [testREADME] Testing README file exists, 0.25
+2024/10/16 16:47:34 [testREADME] README content: 
+Features Implemented:
+
+1. Custom Shell Prompt 
+    The shell displays a prompt in the format:
+    username@hostname:current_working_directory>
+    Used getcwd(), getlogin() and gethostname()
+
+2. Basic Command Execution
+The shell can execute standard Unix commands (like ls and cat).
+The commands are run by creating a child process using fork(). The child process then uses execvp() to execute the given command.
+
+3. Change Directory (cd command)
+The shell includes a built-in cd command to change the current working directory.
+If the user provides no argument, or ~ is passed, it defaults to the home directory.
+
+4. Background Execution (bg command)
+Commands can be run in the background using the "bg".
+The shell does not wait for background jobs to complete, allowing the user to continue entering commands.
+
+5. Background Process Listing (bglist command)
+The bglist command displays a list of all active background jobs, including their process ID (PID) and the command that is being executed.
+
+6. Background Job Termination Notification
+When a background process terminates, the shell automatically prints a message to the user in the format:
+[process id]: [command] has terminated.
+This ensures the user is aware when a background job has completed.
+
+7. Handling Input
+The shell accepts and processes user input via the read_input() function, allowing users to input commands and execute them.
+Input is parsed into the command and its arguments using parse_input(). 
+Used functions like strtok().
+
+8. Exiting the Shell (exit command)
+The shell can be terminated by typing the exit command  
+2024/10/16 16:47:34 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.25]): 
+2024/10/16 16:47:44 mark received: y
+2024/10/16 16:47:44 ==== Test name: testREADME, Mark received: 0.25 ====
+
+2024/10/16 16:47:45 [testExecSSI] Testing your ssi can be executed without additional parameter and shows correct prompt, 0.50
+2024/10/16 16:47:45 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:45 Sending command to SSI: ls  
+2024/10/16 16:47:45 hello.txt
+Makefile
+marking-linux-amd64
+README.md
+README.txt
+ssi
+ssi.c
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:45 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.50]): 
+2024/10/16 16:47:47 mark received: y
+2024/10/16 16:47:47 ==== Test name: testExecSSI, Mark received: 0.50 ====
+
+2024/10/16 16:47:48 [testExec] Testing exec without parameters, 1.00
+2024/10/16 16:47:48 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:48 Sending command to SSI: ls  
+2024/10/16 16:47:48 hello.txt
+Makefile
+marking-linux-amd64
+README.md
+README.txt
+ssi
+ssi.c
+temp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:48 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:47:50 mark received: y
+2024/10/16 16:47:50 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:51 Sending command to SSI: pwd  
+2024/10/16 16:47:51 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:51 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:47:53 mark received: y
+2024/10/16 16:47:53 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:53 Sending command to SSI: uname  
+2024/10/16 16:47:53 Linux
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:53 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:47:54 mark received: y
+2024/10/16 16:47:54 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:54 Sending command to SSI: date  
+2024/10/16 16:47:54 Wed 16 Oct 2024 04:47:54 PM PDT
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:54 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:47:56 mark received: y
+2024/10/16 16:47:56 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:56 Sending command to SSI: hostname  
+2024/10/16 16:47:56 linux203
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:56 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:47:56 mark received: y
+2024/10/16 16:47:56 ==== Test name: testExec, Mark received: 1.00 ====
+
+2024/10/16 16:47:57 [testExecWithParameters] Testing exec with parameters, 1.00
+2024/10/16 16:47:58 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:58 Sending command to SSI: 
+ls temp
+exit
+
+2024/10/16 16:47:58 A
+B
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:58 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:47:59 mark received: y
+2024/10/16 16:47:59 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:47:59 Sending command to SSI: 
+ls -alh
+exit
+
+2024/10/16 16:47:59 total 2.0M
+drwxr-xr-x 4 clarkzjw clarkzjw 4.0K Oct 16 16:47 .
+drwxr-xr-x 3 clarkzjw clarkzjw 4.0K Oct 16 14:43 ..
+drwxr-xr-x 8 clarkzjw clarkzjw 4.0K Oct 16 14:25 .git
+-rw-r--r-- 1 clarkzjw clarkzjw   12 Oct 16 14:25 hello.txt
+-rw-r--r-- 1 clarkzjw clarkzjw   58 Oct 16 14:25 Makefile
+-rw-r--r-- 1 clarkzjw clarkzjw 1.9M Oct 16 14:25 marking-linux-amd64
+-rw-r--r-- 1 clarkzjw clarkzjw 6.2K Oct 16 14:25 README.md
+-rw-r--r-- 1 clarkzjw clarkzjw 1.6K Oct 16 14:25 README.txt
+-rwxrwxr-x 1 clarkzjw clarkzjw  18K Oct 16 16:47 ssi
+-rw-r--r-- 1 clarkzjw clarkzjw 5.5K Oct 16 14:25 ssi.c
+drwxr-xr-x 4 clarkzjw clarkzjw 4.0K Oct 16 16:47 temp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:47:59 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:03 mark received: y
+2024/10/16 16:48:03 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:03 Sending command to SSI: 
+ls temp/A/C
+exit
+
+2024/10/16 16:48:03 AC.txt
+D
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:48:03 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:04 mark received: y
+2024/10/16 16:48:04 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:04 Sending command to SSI: 
+cat temp/A/C/AC.txt
+exit
+
+2024/10/16 16:48:04 This is the content for AC.txt
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:48:04 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:05 mark received: y
+2024/10/16 16:48:05 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:05 Sending command to SSI: 
+echo hello
+exit
+
+2024/10/16 16:48:05 hello
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:48:05 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:07 mark received: y
+2024/10/16 16:48:07 ==== Test name: testExecWithParameters, Mark received: 1.00 ====
+
+2024/10/16 16:48:08 [testNotExistCommand] Testing non-existent command, 1.00
+2024/10/16 16:48:08 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:08 Sending command to SSI: 
+nonexistent 
+exit
+
+2024/10/16 16:48:08 clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> No such command
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:48:08 Do you want to award mark for this test? (y/n or input a floating number between [0, 1.00]): 
+2024/10/16 16:48:12 mark received: n
+2024/10/16 16:48:12 ==== Test name: testNotExistCommand, Mark received: 0.00 ==== // should output <name>: No such file or directory
+
+2024/10/16 16:48:13 [testExecLongRunning] Testing exec with long running command, 1.00
+2024/10/16 16:48:13 [COMMAND]: ./ssi
+2024/10/16 16:48:13 Waiting 5 seconds before sending Ctrl-C signal
+2024/10/16 16:48:18 Sending interrupt signal Ctrl-C
+2024/10/16 16:48:18 PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=55 time=3.94 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=55 time=3.58 ms
+64 bytes from 1.1.1.1: icmp_seq=3 ttl=55 time=3.86 ms
+64 bytes from 1.1.1.1: icmp_seq=4 ttl=55 time=3.73 ms
+64 bytes from 1.1.1.1: icmp_seq=5 ttl=55 time=3.81 ms
+2024/10/16 16:48:18 64 bytes from 1.1.1.1: icmp_seq=6 ttl=55 time=3.89 ms
+2024/10/16 16:48:19 64 bytes from 1.1.1.1: icmp_seq=7 ttl=55 time=3.76 ms
+2024/10/16 16:48:20 64 bytes from 1.1.1.1: icmp_seq=8 ttl=55 time=3.82 ms
+2024/10/16 16:48:21 64 bytes from 1.1.1.1: icmp_seq=9 ttl=55 time=3.76 ms
+2024/10/16 16:48:22 64 bytes from 1.1.1.1: icmp_seq=10 ttl=55 time=3.75 ms
+
+--- 1.1.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9016ms
+rtt min/avg/max/mdev = 3.575/3.788/3.938/0.095 ms
+2024/10/16 16:48:22 [testExecLongRunning] ssi failed to execute: signal: interrupt
+2024/10/16 16:48:22 ==== Test name: testExecLongRunning, Mark received: 0.00 ==== // Ctrl-C exits the entire ssi instead of only the foreground program.
+
+2024/10/16 16:48:23 [testPwd] Testing printing current working directory, 1.00
+2024/10/16 16:48:23 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:23 Sending command to SSI: 
+pwd 
+exit
+
+2024/10/16 16:48:23 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:48:23 pwd should output: 
+/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1
+2024/10/16 16:48:23 Do you want to award mark for this test? (y/n or input a floating number between [0, 1.00]): 
+2024/10/16 16:48:31 mark received: y
+2024/10/16 16:48:31 ==== Test name: testPwd, Mark received: 1.00 ====
+
+2024/10/16 16:48:32 [testChangeRelativeDir] Testing changing relative directory, 1.00
+2024/10/16 16:48:32 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:32 Sending command to SSI: 
+cd ./temp
+pwd
+exit
+
+2024/10/16 16:48:32 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp> 
+2024/10/16 16:48:32 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:36 mark received: y
+2024/10/16 16:48:36 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:36 Sending command to SSI: 
+cd ./A
+pwd
+exit
+
+2024/10/16 16:48:36 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A> 
+2024/10/16 16:48:36 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:37 mark received: y
+2024/10/16 16:48:37 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:37 Sending command to SSI: 
+cd ./C
+pwd
+exit
+
+2024/10/16 16:48:37 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A/C
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A/C> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A/C> 
+2024/10/16 16:48:37 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:41 mark received: y
+2024/10/16 16:48:41 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:41 Sending command to SSI: 
+cd ../..
+pwd
+exit
+
+2024/10/16 16:48:41 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A/C> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp> 
+2024/10/16 16:48:41 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:46 mark received: y
+2024/10/16 16:48:46 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:46 Sending command to SSI: 
+cd ./D/../..
+pwd
+exit
+
+2024/10/16 16:48:46 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A/C> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/temp/A> 
+2024/10/16 16:48:46 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:47 mark received: y
+2024/10/16 16:48:47 ==== Test name: testChangeRelativeDir, Mark received: 1.00 ====
+
+2024/10/16 16:48:48 [testChangeAbsDir] Testing changing absolute directory, 1.00
+2024/10/16 16:48:48 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:48 Sending command to SSI: 
+cd /tmp
+pwd
+exit
+
+2024/10/16 16:48:48 /tmp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/tmp> clarkzjw@linux203:/tmp> 
+2024/10/16 16:48:48 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:51 mark received: y
+2024/10/16 16:48:51 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:51 Sending command to SSI: 
+cd /tmp/../tmp/../tmp/
+pwd
+exit
+
+2024/10/16 16:48:51 /tmp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/tmp> clarkzjw@linux203:/tmp> 
+2024/10/16 16:48:51 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:53 mark received: y
+2024/10/16 16:48:53 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:53 Sending command to SSI: 
+cd /
+pwd
+exit
+
+2024/10/16 16:48:53 /
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/> clarkzjw@linux203:/> 
+2024/10/16 16:48:53 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:55 mark received: y
+2024/10/16 16:48:55 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:55 Sending command to SSI: 
+cd /.././
+pwd
+exit
+
+2024/10/16 16:48:55 /
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/> clarkzjw@linux203:/> 
+2024/10/16 16:48:55 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:48:59 mark received: y
+2024/10/16 16:48:59 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:48:59 Sending command to SSI: 
+cd /tmp/nonexisit/
+pwd
+exit
+
+2024/10/16 16:48:59 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> /tmp/nonexisit/ : No such file or directory
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:48:59 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:49:06 mark received: y
+2024/10/16 16:49:06 ==== Test name: testChangeAbsDir, Mark received: 1.00 ====
+
+2024/10/16 16:49:07 [testChangeHomeDir] Testing changing home directory, 1.00
+2024/10/16 16:49:07 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:49:07 Sending command to SSI: 
+cd /tmp
+pwd
+exit
+
+2024/10/16 16:49:07 /tmp
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/tmp> clarkzjw@linux203:/tmp> 
+2024/10/16 16:49:07 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:49:09 mark received: y
+2024/10/16 16:49:09 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:49:09 Sending command to SSI: 
+cd ~
+pwd
+exit
+
+2024/10/16 16:49:09 /home/clarkzjw
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw> clarkzjw@linux203:/home/clarkzjw> 
+2024/10/16 16:49:09 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:49:10 mark received: y
+2024/10/16 16:49:10 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:49:10 Sending command to SSI: 
+cd ~/
+pwd
+exit
+
+2024/10/16 16:49:10 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> ~/ : No such file or directory
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:49:10 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:49:13 mark received: n
+2024/10/16 16:49:13 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:49:13 Sending command to SSI: 
+cd ~/../../
+pwd
+exit
+
+2024/10/16 16:49:13 /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> ~/../../ : No such file or directory
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:49:13 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:49:14 mark received: n
+2024/10/16 16:49:14 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:49:14 Sending command to SSI: 
+cd 
+pwd
+exit
+
+2024/10/16 16:49:14 /home/clarkzjw
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw> clarkzjw@linux203:/home/clarkzjw> 
+2024/10/16 16:49:14 Do you want to award mark for this test? (y/n or input a floating number between [0, 0.20]): 
+2024/10/16 16:49:16 mark received: y
+2024/10/16 16:49:16 ==== Test name: testChangeHomeDir, Mark received: 0.60 ====
+
+2024/10/16 16:49:17 [testPromptCorrect] Testing prompt is correct, 1.00
+2024/10/16 16:49:17 Among all the above changing directory tests, does the prompt always show the correct cwd after each `cd` command?
+2024/10/16 16:49:17 Do you want to award mark for this test? (y/n or input a floating number between [0, 1.00]): 
+2024/10/16 16:49:19 mark received: y
+2024/10/16 16:49:19 ==== Test name: testPromptCorrect, Mark received: 1.00 ====
+
+2024/10/16 16:49:20 [testBgPing] Testing `bg` command with `ping`, 5.00
+2024/10/16 16:49:20 Please wait for around 15 seconds
+2024/10/16 16:49:20 [COMMAND]: /home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1/ssi
+2024/10/16 16:49:20 Sending command to SSI: bg ping -c 5 1.1.1.1
+2024/10/16 16:49:20 Sending command to SSI: bg ping -c 10 8.8.8.8
+2024/10/16 16:49:20 Sending command to SSI: bglist  
+2024/10/16 16:49:20 Sending command to SSI: sleep 5 
+2024/10/16 16:49:20 Sending command to SSI: bglist  
+2024/10/16 16:49:20 Sending command to SSI: sleep 5 
+2024/10/16 16:49:20 Sending command to SSI: bglist  
+2024/10/16 16:49:25 Error reading stdout:read |0: file already closed
+2024/10/16 16:49:25 clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> Started background process 1018867: ping -c 5 1.1.1.1 
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> Started background process 1018867: ping -c 5 1.1.1.1 
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> Started background process 1018868: ping -c 10 8.8.8.8 
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 1018868: ping -c 10 8.8.8.8 
+1018867: ping -c 5 1.1.1.1 
+Total Background jobs: 2
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 1018868: ping -c 10 8.8.8.8 
+1018867: ping -c 5 1.1.1.1 
+Total Background jobs: 2
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 1018868: ping -c 10 8.8.8.8 
+1018867: ping -c 5 1.1.1.1 
+Total Background jobs: 2
+clarkzjw@linux203:/home/clarkzjw/CSC360/marking/p1/gitlab/submissions/aryapunjabi/p1> 
+2024/10/16 16:49:25 Do you want to award mark for this test? (y/n or input a floating number between [0, 5.00]): 
+2024/10/16 16:50:09 mark received: y
+2024/10/16 16:50:09 ==== Test name: testBgPing, Mark received: 5.00 ==== // Manual testing is fine
+
+2024/10/16 16:50:10 
+==== Final Grade: 12.600000====
